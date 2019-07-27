@@ -1,7 +1,5 @@
 ### Modified to Run on Heroku in Docker Container
 
-Source: https://gitlab.com/commento/commento/
-
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ### Commento
