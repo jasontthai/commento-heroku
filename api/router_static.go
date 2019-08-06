@@ -14,6 +14,10 @@ func redirectLogin(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, os.Getenv("ORIGIN")+"/login", 301)
 }
 
+func wakemydyno(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("awake!\n"))
+}
+
 type staticPlugs struct {
 	Origin    string
 	CdnPrefix string
@@ -130,6 +134,7 @@ func staticRouterInit(router *mux.Router) error {
 	}
 
 	router.HandleFunc("/", redirectLogin)
+	router.HandleFunc("/wakemydyno.txt", wakemydyno)
 
 	return nil
 }
